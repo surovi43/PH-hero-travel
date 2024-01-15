@@ -1,4 +1,7 @@
 /* css variables */
+:root {
+   --primary-color: #ff5400;
+}
 
 /* shared styles */
 * {
@@ -14,23 +17,81 @@ input {
    font-size: 14px;
 }
 
-/* component styles */
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-   body,
-   button,
-   input {
-      font-size: 16px;
-   }
+h4 {
+   font-size: 1.25rem;
+   font-weight: 800;
 }
 
+li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+.container {
+   width: 100%;
+   padding-left: 1.25rem;
+   padding-right: 1.25rem;
+}
+
+/* component styles */
+.header {
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+.header > .container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.left {
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+}
+
+.nav-container {
+   display: none;
+}
+
+.nav-item:hover > a {
+   color: var(--primary-color);
+}
+
+/* Responsive Styles */
 @media (min-width: 1200px) {
    body,
    button,
    input {
       font-size: 16px;
    }
+
+   .container {
+      max-width: 1280px;
+      margin: 0 auto;
+   }
+
+   .nav-container {
+      display: block;
+   }
+
+   .nav-container > .nav-menu {
+      display: flex;
+      column-gap: 44px;
+   }
+
+   .menu-icon {
+      display: none;
+   }
 }
 
 /* atomic css */
+
+.text-color {
+   color: var(--primary-color);
+}
