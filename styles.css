@@ -1,6 +1,10 @@
 /* css variables */
 :root {
    --primary-color: #ff5400;
+   --secondary-color: #f3f3f3;
+   --text-secondary: #5a5a5d;
+   --bg-gradient-start: #131318;
+   --bg-gradient-end: #13131800;
 }
 
 /* shared styles */
@@ -8,11 +12,6 @@
    box-sizing: border-box;
    margin: 0;
    padding: 0;
-}
-
-body {
-   width: 100vw;
-   height: 100vh;
 }
 
 body,
@@ -23,33 +22,37 @@ select {
    font-size: 14px;
 }
 
+h1,
+h2,
+h3 {
+   font-size: 1.25rem;
+}
+
 button,
 input,
 select {
    border: 0;
    outline: none;
-   padding-left: 1rem;
-   padding-right: 1rem;
    height: 3.25rem;
    border-radius: 0.5rem;
 }
 
 input,
 select {
+   padding-left: 1rem;
+   padding-right: 1rem;
    width: 100%;
 }
 
-input::placeholder,
-select::placeholder {
-   color: #898989;
+img {
+   width: 100%;
 }
 
-h4 {
-   font-size: 1.25rem;
-   font-weight: 800;
+ul {
+   margin-left: 1rem;
 }
 
-li {
+li.nav-item {
    list-style: none;
 }
 
@@ -62,10 +65,19 @@ p {
    line-height: 1.8;
 }
 
+input::placeholder,
+select::placeholder {
+   color: #898989;
+}
+
 .container {
-   margin-left: 1.25rem;
-   margin-right: 1.25rem;
-   border-radius: 1rem;
+   padding-right: 1.25rem;
+   padding-left: 1.25rem;
+}
+
+main.container {
+   display: grid;
+   row-gap: 1.5rem;
 }
 
 .btn {
@@ -75,8 +87,13 @@ p {
    background-color: var(--primary-color);
    display: flex;
    justify-content: center;
-   column-gap: 0.5rem;
    align-items: center;
+   column-gap: 0.5rem;
+}
+
+.section-intro {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
 }
 
 /* component styles */
@@ -97,80 +114,171 @@ p {
    gap: 0.75rem;
 }
 
+.menu-icon {
+   display: block;
+}
+
 .nav-container {
    display: none;
 }
 
-.nav-item:hover > a {
-   color: var(--primary-color);
+.icon {
+   width: 1.5rem;
+   height: 1.5rem;
 }
 
-/* banner  section*/
-.banner {
+.card-icon {
+   width: 3rem;
+   height: 3rem;
+}
+
+.icon,
+.card-icon,
+.flex-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* banner section*/
+.banner-section {
    background-image: linear-gradient(to bottom, #131318, #13131800),
       url("images/herobg1.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
-   padding: 2rem 1rem 3rem;
    display: grid;
+   justify-items: center;
+   align-content: center;
    row-gap: 3rem;
+   padding: 2rem 1rem 3rem;
 }
 
-.banner > .text-group {
+.banner-section > .text-group {
    display: grid;
    row-gap: 0.75rem;
+}
+
+.banner-form-container {
+   padding: 1rem;
+   border-radius: 0.5rem;
+   background-color: rgba(255, 255, 255, 0.4);
+   width: 100%;
+   max-width: 50rem;
 }
 
 .banner-form {
    display: grid;
-   row-gap: 1rem;
-   padding-left: calc(2.5rem - 1rem);
-   padding-right: calc(2.5rem - 1rem);
-}
-
-.banner-form > input,
-.banner-form > select,
-.banner-form > .find-btn {
-   height: 3.25rem;
-   padding: 1rem;
-   border: 0;
-   border-radius: 8px;
+   gap: 1rem;
 }
 
 /* popular-tour section */
-.popular-tour > h1 {
-   margin-top: 1.5rem;
-   margin-bottom: 1rem;
+.popular-tour {
+   display: grid;
+   column-gap: 3.25rem;
+   row-gap: 1.5rem;
 }
 
-.popular-tour > p {
+.popular-tour > .left-side > p {
    margin-top: 1rem;
    margin-bottom: 1rem;
 }
 
-.popular-tour > ul {
+.popular-tour > .left-side > ul {
    display: grid;
    line-height: 1.8;
-   align-items: center;
    row-gap: 0.75rem;
    margin-bottom: 1.5rem;
 }
 
-.popular-tour > ul > li {
-   list-style: disc;
-   margin-left: 1rem;
+.popular-tour > .image {
+   min-height: 21.75rem;
+   width: 100%;
 }
 
-.popular-tour > .btn {
-   margin-bottom: 1.5rem;
+/* destination section */
+.destination-option {
+   display: grid;
+   gap: 1rem;
+   grid-auto-rows: 11rem;
 }
 
+.destination {
+   font-size: 1.25rem;
+   width: 100%;
+}
+
+.maldives {
+   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
+      url("images/maldives.png");
+}
+
+.indonasia {
+   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
+      url("images/indonesia.png");
+}
+
+.srilanka {
+   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
+      url("images/srilanka.png");
+}
+
+.north-america {
+   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
+      url("images/north-america.png");
+}
+
+.kashmir {
+   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
+      url("images/kashmir.png");
+}
+
+.bangladesh {
+   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
+      url("images/bangladesh.png");
+}
+
+.bandarban {
+   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
+      url("images/bandarban.png");
+}
+
+/* why-us section */
+.advantages,
+.advantages > .group {
+   display: grid;
+   gap: 1rem;
+   justify-items: center;
+}
+
+.advantages .card {
+   padding: 2rem;
+   max-width: 36rem;
+}
+
+.advantages .card > .card-title {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+.advantages > .group > .card-1 {
+   background-color: #fffbf7;
+   border: 1px solid #feedd9;
+}
+
+.advantages > .group > .card-2 {
+   background-color: #f4fdff;
+   border: 1px solid #cbf4fd;
+}
+
+.advantages > .card-3 {
+   background-color: #fef6f6;
+   border: 1px solid #fad2d2;
+}
+
+/* newsletter section */
 .newsletter-section {
    display: grid;
-   gap: 1.5rem;
+   column-gap: 1.5rem;
+   row-gap: 1rem;
    align-content: start;
-   margin-top: 1.5rem;
 }
 
 .newsletter-form {
@@ -205,7 +313,7 @@ p {
 }
 
 .newsletter-image {
-   height: 18.75rem;
+   min-height: 18.75rem;
    border-radius: 1rem;
    background-image: url("images/hill.png");
    position: relative;
@@ -224,190 +332,55 @@ p {
    transform: rotate(-19.63deg);
    transform-origin: left bottom;
 }
-/* destination section */
-
-.herobg2 {
-   width: 100%;
-   padding-bottom: 1.5rem;
-}
-
-.destination > h3 {
-   display: flex;
-   justify-content: center;
-}
-
-.destination > p {
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-}
-
-.destination-option {
-   display: grid;
-   row-gap: 1rem;
-}
-
-.destination > .destination-option > .Maldives {
-   background-image: linear-gradient(
-         0deg,
-         rgba(19, 19, 24, 0.2) 0%,
-         hsla(240, 12%, 8%, 0.2) 100%
-      ),
-      url("images/maldives.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 2rem 1rem 3rem;
-   display: grid;
-   width: 100%;
-   height: 13.75rem;
-   border-radius: 1rem;
-}
-.destination > .destination-option > .Srilanka {
-   background-image: linear-gradient(0deg, #13131833 0%, #13131833 100%),
-      url("images/srilanka.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 2rem 1rem 3rem;
-   display: grid;
-   width: 100%;
-   height: 13.75rem;
-   border-radius: 1rem;
-}
-.destination > .destination-option > .Indonasia {
-   background-image: linear-gradient(#13131833 0%, #13131833 100%),
-      url("images/indonesia.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 2rem 1rem 3rem;
-   display: grid;
-   width: 100%;
-   height: 13.75rem;
-   border-radius: 1rem;
-}
-.destination > .destination-option > .North-America {
-   background-image: linear-gradient(#13131833 0%, #13131833 100%),
-      url("images/america.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 2rem 1rem 3rem;
-   display: grid;
-   width: 100%;
-   height: 13.75rem;
-   border-radius: 1rem;
-}
-.destination > .destination-option > .Kashmir {
-   background-image: linear-gradient(#13131833 0%, #13131833 100%),
-      url("images/kashmir.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-
-   padding: 2rem 1rem 3rem;
-   display: flex;
-   flex-shrink: 0;
-   width: 100%;
-   height: 13.75rem;
-   border-radius: 1rem;
-}
-
-.destination > .destination-option > .Bangladesh {
-   background-image: linear-gradient(#13131833 0%, #13131833 100%),
-      url("images/bangladesh1.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 2rem 1rem 3rem;
-   display: grid;
-   width: 100%;
-   height: 13.75rem;
-   border-radius: 1rem;
-}
-
-.destination > .destination-option > .Bandarban {
-   background-image: linear-gradient(#13131833 0%, #13131833 100%),
-      url("images/bandarban.png");
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 2rem 1rem 3rem;
-   display: grid;
-   width: 100%;
-   height: 13.75rem;
-   border-radius: 1rem;
-   margin-bottom: 1.5rem;
-}
-
-/* why-us section */
-
-.why-us > p {
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-}
-
-.advantages {
-   display: grid;
-   row-gap: 1rem;
-}
-
-.handpicked {
-   border-radius: 1rem;
-   border: 0.0625rem solid #fbb56333;
-   background: #fbb5630d;
-   padding: 2rem;
-}
-
-.handpicked > h3 {
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-}
-
-.handpicked > img {
-   width: 3rem;
-   height: 3rem;
-   flex-shrink: 0;
-}
-
-.servic {
-   border-radius: 1rem;
-   border: 0.0625rem solid #29cef633;
-   background: #29cef60d;
-   padding: 2rem;
-}
-.servic > img {
-   width: 3rem;
-   height: 3rem;
-   flex-shrink: 0;
-}
-
-.servic > h3 {
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-}
-
-.garuntee {
-   border-radius: 1rem;
-   border: 0.0625rem solid #e9444433;
-   background: #e944440d;
-   padding: 2rem;
-}
-
-.garuntee > h3 {
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-}
-.garuntee > img {
-   width: 3rem;
-   height: 3rem;
-   flex-shrink: 0;
-}
 
 /* Responsive Styles */
 @media (min-width: 1200px) {
    body,
    button,
-   input {
+   input,
+   select {
       font-size: 16px;
    }
 
+   h1,
+   h2,
+   h3 {
+      font-weight: 800;
+   }
+
+   h1 {
+      font-size: 2.5rem;
+   }
+
+   h2 {
+      font-size: 2rem;
+   }
+
+   h3 {
+      font-size: 1.5rem;
+   }
+
    .container {
-      max-width: 1280px;
-      margin: 0 auto;
+      max-width: 1200px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: 0;
+   }
+
+   main.container {
+      row-gap: 6.25rem;
+   }
+
+   .section-intro {
+      margin: 1.5rem auto 3rem;
+      max-width: 40rem;
+   }
+
+   /* Header section */
+   .header {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
    }
 
    .nav-container {
@@ -419,8 +392,100 @@ p {
       column-gap: 44px;
    }
 
+   .nav-item:hover > a {
+      color: var(--primary-color);
+   }
+
    .menu-icon {
       display: none;
+   }
+
+   /* banner section */
+   .banner-section {
+      height: 31.25rem;
+   }
+
+   .banner-section > .text-group > p {
+      max-width: 42.25rem;
+   }
+
+   .banner-form {
+      width: 100%;
+      max-width: 48rem;
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   /* popular-tour section */
+   .popular-tour {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   /* destination section */
+   .destination-option {
+      gap: 1.5rem;
+      grid-auto-rows: 18.75rem;
+   }
+
+   .destination {
+      font-size: 1.75rem;
+      font-weight: 800;
+   }
+
+   .maldives {
+      grid-area: 1 / 1 / 2 / 6;
+   }
+
+   .indonasia {
+      grid-area: 1 / 6 / 2 / 12;
+   }
+
+   .srilanka {
+      grid-area: 2 / 1 / 3 / 5;
+   }
+
+   .north-america {
+      grid-area: 2 / 5 / 3 / 10;
+   }
+
+   .kashmir {
+      grid-area: 2 / 10 / 3 / 12;
+   }
+
+   .bangladesh {
+      grid-area: 3 / 1 / 4 / 6;
+   }
+
+   .bandarban {
+      grid-area: 3 / 6 / 4 / 12;
+   }
+
+   /* why-us section */
+   .advantages,
+   .advantages > .group {
+      gap: 1.5rem;
+   }
+
+   .advantages > .group {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .advantages .card > .card-title {
+      margin-top: 2rem;
+   }
+
+   /* newsletter section */
+   .newsletter-section {
+      grid-template-columns: 5fr 7fr;
+   }
+
+   .newsletter-section p {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+   }
+
+   .newsletter-form > .btn {
+      margin-top: 1.5rem;
    }
 }
 
@@ -437,8 +502,12 @@ p {
    text-align: center;
 }
 
-.text-align-center {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+.rounded {
+   border-radius: 1rem;
+}
+
+.bg-image {
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
 }
